@@ -29,6 +29,7 @@ func main() {
 	go func() {
 		<-done
 		close(resultChan)
+		close(done)
 	}()
 
 	for item := range resultChan {
